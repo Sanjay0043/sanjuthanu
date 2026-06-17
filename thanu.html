@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1ff,#a18cd1);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+    font-family:'Segoe UI',sans-serif;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.message-box{
+    text-align:center;
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.15);
+    box-shadow:0 0 30px rgba(255,255,255,0.3);
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.3rem;
+    line-height:1.8;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:float 12s linear infinite;
+    opacity:0.8;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) translateX(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px) translateX(120px);
+        opacity:0;
+    }
+}
+
+.wind{
+    position:absolute;
+    width:180px;
+    height:2px;
+    background:rgba(255,255,255,0.5);
+    border-radius:10px;
+    animation:wind 6s linear infinite;
+}
+
+@keyframes wind{
+    from{
+        left:-200px;
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        left:110%;
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="message-box">
+    <h1>❤️ MY dear ammu❤️</h1>
+
+    <p>
+        Every moment with you feels like a beautiful dream.<br>
+        Your smile brightens my darkest days,<br>
+        and your love fills my heart with happiness.<br><br>
+
+        I love you more than words can ever express. 🌹
+    </p>
+</div>
+
+<script>
+
+// Floating Hearts
+for(let i=0;i<40;i++){
+
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=
+        (8+Math.random()*8)+"s";
+
+    heart.style.fontSize=
+        (15+Math.random()*25)+"px";
+
+    document.body.appendChild(heart);
+}
+
+// Wind Animation
+setInterval(()=>{
+
+    let wind=document.createElement("div");
+    wind.className="wind";
+
+    wind.style.top=Math.random()*100+"vh";
+
+    document.body.appendChild(wind);
+
+    setTimeout(()=>{
+        wind.remove();
+    },6000);
+
+},500);
+
+</script>
+
+</body>
+</html>
